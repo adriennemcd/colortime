@@ -21,8 +21,7 @@ function print(message) {
 function hoverColor() {
     $('.all').mouseover(function(){
         console.log(this.id);
-        $('div#color' + this.id).css("background-color", "yellow");
-        //console.log(test);
+        $('#' + this.id).css("background-color", "yellow");
     });
 }
 
