@@ -25,8 +25,15 @@ div.all {
     border-radius: 5px;
 }
 
-#tiny {
-    width: 40px;
+#tinySquares {
+    width: 100%;
     height: 40px;
-    background-color: blue;
+    background-color: gray;
+}
+
+.block {
+    width: 20%;
+    height: 40px;
+    z-index: 5;
+    display: inline-block;
 }
