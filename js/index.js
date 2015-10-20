@@ -1,6 +1,6 @@
 var html = '';
 var rgbColor;
-var selectedColors = [];
+var selectedRGB = [];
 var selectedColorBlocks = [];
 
 function randomRGB() {
@@ -26,11 +26,6 @@ function print(message) {
 }
 
 function print2(message) {
-    var infoDiv = document.getElementById('colorClick');
-    infoDiv.innerHTML = message;
-}
-
-function print3(message) {
     var infoDiv = document.getElementById('tinySquares');
     infoDiv.innerHTML = message;
 }
@@ -49,14 +44,11 @@ Color.prototype.events = function () {
     });
     $('.all').click(function(){
         var bckgrnd = $( this ).css( 'background-color' );
-        var colorInfo = bckgrnd + '<br />';
-        //$('#tinySquares').css( 'background-color', bckgrnd );
         var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
+        $('#tinySquares').css("height", "100%");
+        selectedRGB.push(bckgrnd);
         selectedColorBlocks.push(colorBlock);
-        print3(selectedColorBlocks.join(""));
-        selectedColors.push(colorInfo);
-        print2(selectedColors.join(""));
-        console.log(selectedColorBlocks);
+        print2(selectedColorBlocks.join(""));
     });
 }
 

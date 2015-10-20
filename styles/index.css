@@ -20,20 +20,25 @@ div.all {
     right: 10px;
     font: 14px/16px Arial, Helvetica, sans-serif;
     background-color: rgba(255, 255, 255, .9);
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
 }
 
 #tinySquares {
+    box-sizing: border-box;
+    margin: 0 auto;
     width: 100%;
     height: 40px;
     background-color: gray;
 }
 
 .block {
-    width: 20%;
+    box-sizing: border-box;
+    width: 100%;
     height: 40px;
-    z-index: 5;
-    display: inline-block;
+}
+
+.button {
+
 }
