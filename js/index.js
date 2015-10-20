@@ -30,12 +30,7 @@ function print2(message) {
     infoDiv.innerHTML = message;
 }
 
-function Color(bckgrnd, identity) {
-    this.bckgrnd = bckgrnd;
-    this.identity = identity;
-}
-
-Color.prototype.events = function () {
+function userEvents() {
     $('.all').mouseover(function(){
         $('#' + this.id).css("border", "3px solid white");
     });
@@ -46,15 +41,20 @@ Color.prototype.events = function () {
         var bckgrnd = $( this ).css( 'background-color' );
         var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
         $('#tinySquares').css("height", "100%");
+        $('#tinySquares').css("border", "none");
         selectedRGB.push(bckgrnd);
         selectedColorBlocks.push(colorBlock);
         print2(selectedColorBlocks.join(""));
+        document.getElementById('btn').setAttribute("data-clipboard-text", selectedRGB);
     });
 }
 
-var shell = new Color();
-
+new Clipboard('#btn');
 print(html);
-shell.events();
+userEvents();
+
+
+
+
 
 
