@@ -49,6 +49,13 @@ function userEvents() {
     });
 }
 
+$(".animate").click(function(){
+        $(".infobox").animate({right: '-190px'});
+        //$(".infobox").animate({right: '10px'});
+});
+
+
+
 new Clipboard('#btn');
 print(html);
 userEvents();
