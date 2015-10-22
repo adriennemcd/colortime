@@ -50,10 +50,18 @@ function userEvents() {
 }
 
 $(".animate").click(function(){
-        $(".infobox").animate({right: '-190px'});
+
         //$(".infobox").animate({right: '10px'});
 });
 
+$(".glyphicon-chevron-right, .glyphicon-chevron-left").click(function(){
+    $(this).toggleClass("glyphicon-chevron-right glyphicon-chevron-left");
+    if( $(".infobox").css('right') == '10px') {
+        $(".infobox").animate({right: '-226px'});
+    } else {
+        $(".infobox").animate({right: '10px'});
+    }
+});
 
 
 new Clipboard('#btn');

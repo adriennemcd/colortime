@@ -19,10 +19,27 @@ div.all {
     top: 10px;
     right: 10px;
     font: 14px/16px Arial, Helvetica, sans-serif;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, .95);
     padding: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
+}
+
+.aniDiv {
+    background-color: rgba(255, 255, 255, .95);
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 0px;
+    left: -30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.animate {
+    margin: 0 auto;
+    position: absolute;
+    top: 17px;
+    left: 9px;
+    cursor: pointer;
 }
 
 #tinySquares {
