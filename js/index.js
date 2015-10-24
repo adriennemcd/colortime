@@ -64,16 +64,20 @@ function userEvents() {
         var bckgrnd = $( this ).css( 'background-color' );
         var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
         $('#tinySquares').css({'height': '100%', 'border': 'none'});
+        // allow user to select 10 colors at a time, and select each color only once
         if(selectedColorBlocks.length < 10) {
-            selectedRGB.push(bckgrnd);
-            selectedColorBlocks.push(colorBlock);
-            $('#btn').attr('data-clipboard-text', selectedRGB);
-            print2(selectedColorBlocks.join(''));
-            console.log(selectedColorBlocks);
-            $('#alert').css('display', 'none');
+            if(selectedColorBlocks.indexOf(colorBlock) != -1) {
+                $('#alert1').css('display', 'block');
+                $('#alert1').delay( 1800 ).slideUp( 300 );
+            } else {
+                selectedRGB.push(bckgrnd);
+                selectedColorBlocks.push(colorBlock);
+                $('#btn').attr('data-clipboard-text', selectedRGB);
+                print2(selectedColorBlocks.join(''));
+            }
         } else {
-            $('#alert').css('display', 'block');
-            $('#alert').delay( 1800 ).slideUp( 300 );
+            $('#alert2').css('display', 'block');
+            $('#alert2').delay( 1800 ).slideUp( 300 );
         }
     });
 }
@@ -90,13 +94,12 @@ function userEventsSecondary() {
         var bckgrnd = $( this ).css( 'background-color' );
         var colorBlock = '<div class="block" id="' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
         var index1 = selectedRGB.indexOf( bckgrnd );
-        selectedRGB.splice( index1, 1 );
         var index2 = selectedColorBlocks.indexOf( colorBlock );
+        selectedRGB.splice( index1, 1 );
         selectedColorBlocks.splice( index2, 1 );
         $('#btn').attr('data-clipboard-text', selectedRGB);
-        $('#alert').css('display', 'none');
+        $('#alert2').css('display', 'none');
         print2(selectedColorBlocks.join(''));
-        console.log(selectedColorBlocks);
         if(selectedColorBlocks.length == 0 ){
             $('#tinySquares').css('height', '40px');
             $('#tinySquares').css('border', '2px dashed gray');
