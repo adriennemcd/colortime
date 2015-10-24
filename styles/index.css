@@ -34,6 +34,7 @@ div.lg {
     z-index: 5;
     position: absolute;
     float: right;
+    width: 20%;
     top: 10px;
     right: 10px;
     font: 14px/16px Arial, Helvetica, sans-serif;
@@ -42,11 +43,23 @@ div.lg {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.source,
-.source a:link,
-.source a:visited,
-.source a:active,
-.source a:hover {
+.fa,
+.fa a:link,
+.fa a:visited,
+.fa a:active {
+    color: #859596;
+    padding-right: 5px;
+}
+
+.fa a:hover {
+    color: #a1b6b7;
+}
+
+.source .fa,
+.source .fa a:link,
+.source .fa a:visited,
+.source .fa a:active,
+.source .fa a:hover {
     box-sizing: border-box;
     z-index: 5;
     position: absolute;
@@ -54,6 +67,7 @@ div.lg {
     right: 6px;
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    padding: 0px;
 }
 
 #alert1 {
@@ -120,4 +134,9 @@ div.lg {
 #btn:hover {
     background: #a1b6b7;
     border-bottom: 2px solid #95a5a6;
+}
+
+.about {
+    display: none;
+    padding-top: 15px;
 }

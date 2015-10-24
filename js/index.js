@@ -111,10 +111,20 @@ function userEventsSecondary() {
 $('.glyphicon-chevron-right, .glyphicon-chevron-left').click(function(){
     $(this).toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
     if( $('.infobox').css('right') == '10px') {
-        $('.infobox').animate({right: '-226px'});
+        $('.infobox').animate({right: '-20%'});
     } else {
         $('.infobox').animate({right: '10px'});
     }
+});
+
+// Hide/show about div
+$('.glyphicon-chevron-down, .glyphicon-chevron-up').click(function(){
+    if( $('#about').css('display') == 'none') {
+        $('#about').slideDown(600);
+    } else {
+        $('#about').slideUp(600);
+    }
+    $(this).toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 });
 
 // Initiate clipboard.js and events
