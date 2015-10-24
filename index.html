@@ -1,6 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="octicons/octicons.css">
     <link rel="stylesheet" href="styles/index.css"/>
 </head>
 <body>
@@ -9,13 +10,21 @@
         <h1>colortime!</h1>
         <p>Click to select your color story</p>
         <div id="tinySquares"></div>
-        <button id="btn" data-clipboard-text="">
+        <p id="alert">Easy tiger!  10 colors at a time</p>
+        <button id="btn" data-toggle="tooltip" title="" data-placement="bottom" data-clipboard-text="">
             Copy RGBs to clipboard
-        </button>
+        </button><br />
+        <button onclick="print(htmlSM)"></button>
+        <button onclick="print(htmlMD)"></button>
+        <button onclick="print(htmlLG)"></button>
+    </div>
+    <div class="source">
+        <a href="https://github.com/adriennemcd/colortime" target="_blank"><span class="mega-octicon octicon-mark-github"></span></a>
     </div>
     <div id="output"></div>
 <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- For gh-pages: <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 <script src="js/index.js"></script>
