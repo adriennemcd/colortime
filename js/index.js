@@ -121,10 +121,14 @@ function showColors(newVal){
 // Hide/show infobox
 $('.glyphicon-chevron-right, .glyphicon-chevron-left').click(function(){
     $(this).toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
-    if( $('.infobox').css('right') == '10px') {
-        $('.infobox').animate({right: '-20%'});
+    if( $('#wrapper').css('right') == '10px') {
+        $('#wrapper').animate({right: '-260px'}, 800, function(){
+                $('#wrapper  > .infobox').css('display', 'none');
+                $('#wrapper').css({'width': '30px', 'right': '0'});
+            });
     } else {
-        $('.infobox').animate({right: '10px'});
+        $('#wrapper  > .infobox').css('display', 'block');
+        $('#wrapper').css({'right': '-260', 'width': '290px'}).animate({right: '10px'}, 800);
     }
 });
 
