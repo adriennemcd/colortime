@@ -3,10 +3,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/index.css"/>
+<title>colortime!</title>
 </head>
 <body>
     <div id="infobox" class="infobox">
-        <div class="aniDiv"><span class="animate glyphicon glyphicon-chevron-right"></span></div>
+        <div class="aniDiv"><span class="glyphicon glyphicon-chevron-right"></span></div>
         <h1>colortime!</h1>
         <p>Click to select your color story</p>
         <div id="tinySquares"></div>
@@ -15,12 +16,16 @@
         <button id="btn" data-toggle="tooltip" title="" data-placement="bottom" data-clipboard-text="">
             Copy RGBs to clipboard
         </button><br />
-        <button onclick="print(htmlSM)"></button>
-        <button onclick="print(htmlMD)"></button>
-        <button onclick="print(htmlLG)"></button><br />
-        <span class="glyphicon glyphicon-chevron-down"></span>
+        <div id="slider" class="slider">
+            <input type="range" id="size" min="0" value="0" max="2" step="1" onchange="showColors(this.value)">
+            <div class="labels">
+                <div class="left">more colors</div>
+                <div class="right">less colors</div>
+            </div>
+        </div>
+        <div class="hideAbout"><span class="glyphicon glyphicon-chevron-down"></span></div>
         <div id="about" class="about">
-            <p>Colortime was made by <a href="http://www.adriennemcd.com">Adrienne McDonnell</a></p>
+            <p>Colortime was made by <a href="http://www.adriennemcd.com" target="_blank">Adrienne McDonnell</a></p>
             <a href="https://github.com/adriennemcd" target="_blank"><i class="fa fa-github fa-lg"></i></a>
             <a href="https://www.linkedin.com/in/adriennemcd" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a>
             <a href="https://twitter.com/adrienne_mcd" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>

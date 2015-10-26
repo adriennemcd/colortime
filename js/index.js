@@ -62,7 +62,7 @@ function userEvents() {
     });
     $('.all').click(function(){
         var bckgrnd = $( this ).css( 'background-color' );
-        var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
+        var colorBlock = '<div class="block" id="bk_' + this.id + '" draggable="true" style="background-color:' + bckgrnd + '"></div>';
         $('#tinySquares').css({'height': '100%', 'border': 'none'});
         // allow user to select 10 colors at a time, and select each color only once
         if(selectedColorBlocks.length < 10) {
@@ -105,6 +105,17 @@ function userEventsSecondary() {
             $('#tinySquares').css('border', '2px dashed gray');
         }
     });
+}
+
+// slider for more or less colors
+function showColors(newVal){
+    if(newVal === '0') {
+        print(htmlSM);
+    } else if(newVal === '1') {
+        print(htmlMD);
+    } else {
+        print(htmlLG);
+    }
 }
 
 // Hide/show infobox
