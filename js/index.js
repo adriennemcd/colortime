@@ -132,6 +132,15 @@ $('.glyphicon-chevron-right, .glyphicon-chevron-left').click(function(){
     }
 });
 
+// Hide/show infobox mobile
+$('#aniDivMbl').click(function(){
+    if( $('#infobox > #wrapper2').css('display') == 'none') {
+        $('#infobox > #wrapper2').slideDown(600);
+    } else {
+        $('#infobox > #wrapper2').slideUp(600);
+    }
+});
+
 // Hide/show about div
 $('.glyphicon-chevron-down, .glyphicon-chevron-up').click(function(){
     if( $('#about').css('display') == 'none') {
@@ -158,4 +167,4 @@ clipboard.on('error', function(e) {
 });
 
 //  Build color divs
-print(htmlSM);
+print(htmlMD);

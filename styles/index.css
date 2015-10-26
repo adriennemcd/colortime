@@ -1,5 +1,9 @@
 /* General */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -31,7 +35,6 @@ a:hover {
 }
 
 .sm {
-    box-sizing: border-box;
     position: relative;
     width: 10%;
     height: 10%;
@@ -40,7 +43,6 @@ a:hover {
 }
 
 .md {
-    box-sizing: border-box;
     position: relative;
     width: 20%;
     height: 20%;
@@ -49,7 +51,6 @@ a:hover {
 }
 
 .lg {
-    box-sizing: border-box;
     position: relative;
     width: 33.333%;
     height: 33.333%;
@@ -60,23 +61,12 @@ a:hover {
 /* Infobox and related divs */
 
 #wrapper {
-    box-sizing: border-box;
     z-index: 5;
     position: absolute;
-    width: 290px;
-    top: 10px;
-    right: 10px;
 }
 
 .aniDiv {
     z-index: 6;
-    background-color: rgba(255, 255, 255, .95);
-    float: left;
-    width: 30px;
-    height: 50px;
-    top: 10px;
-    right: 270px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 } /* div to hide infobox */
 
 .aniDiv .glyphicon {
@@ -86,18 +76,13 @@ a:hover {
 }
 
 .infobox {
-    box-sizing: border-box;
     z-index: 5;
-    float: right;
-    width: 260px;
     font: 14px/16px Arial, Helvetica, sans-serif;
     background-color: rgba(255, 255, 255, .95);
-    padding: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 #tinySquares {
-    box-sizing: border-box;
     margin: 0 auto;
     width: 100%;
     height: 40px;
@@ -105,7 +90,6 @@ a:hover {
 } /* container for selected color divs */
 
 .block {
-    box-sizing: border-box;
     top: 0px;
     color: white;
     text-align: right;
@@ -179,7 +163,6 @@ a:hover {
 .source .fa a:visited,
 .source .fa a:active,
 .source .fa a:hover {
-    box-sizing: border-box;
     z-index: 5;
     position: absolute;
     bottom: 6px;
@@ -191,4 +174,119 @@ a:hover {
 
 .glyphicon {
     cursor: pointer;
+}
+
+.glyphicon-menu-hamburger {
+    font-size: 1.3em;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+/* Phones to Tablets */
+
+@media only screen and (min-width: 100px) {
+    #wrapper {
+        right: 0px;
+        top: 0px;
+        width: 100%;
+    }
+
+    .infobox {
+        z-index: 5;
+        width: 100%;
+        padding: 0px 20px 20px 20px;
+    }
+
+    .aniDivMbl {
+        float: left;
+        width: 100%;
+        height: 90px;
+        padding: 0px 20px;
+        background-color: #fff;
+
+    }
+
+    .aniDivMbl .right {
+        padding-top: 35px;
+    }
+
+    .aniDiv,
+    .h1aniDiv {
+        display: none;
+    }
+}
+
+/* Tablets to Desktop */
+
+@media only screen and (min-width: 769px) {
+    #wrapper {
+        width: 290px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .infobox {
+        z-index: 5;
+        float: right;
+        width: 260px;
+        padding: 20px;
+    }
+
+    .aniDiv {
+        z-index: 6;
+        background-color: rgba(255, 255, 255, .95);
+        float: left;
+        width: 30px;
+        height: 50px;
+        top: 10px;
+        right: 270px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        display: block;
+    }
+
+    .h1aniDiv {
+        display: block;
+    }
+
+    .aniDivMbl {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #wrapper {
+        width: 290px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .infobox {
+        z-index: 5;
+        float: right;
+        width: 260px;
+        padding: 20px;
+    }
+
+    .aniDiv {
+        z-index: 6;
+        background-color: rgba(255, 255, 255, .95);
+        float: left;
+        width: 30px;
+        height: 50px;
+        top: 10px;
+        right: 270px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        display: block;
+    }
+
+    .h1aniDiv {
+        display: block;
+    }
+
+    .aniDivMbl {
+        display: none;
+    }
 }
