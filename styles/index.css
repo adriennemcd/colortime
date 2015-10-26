@@ -1,8 +1,36 @@
+/* General */
+
 body {
     margin: 0;
 }
 
-div.all {
+h1 {
+    color: rgb(35, 194, 108);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+a:link,
+a:visited,
+a:active {
+   color: rgb(35, 194, 108);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(24, 148, 100);
+}
+
+.left {
+    text-align: left;
+    float: left;
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+.sm {
     box-sizing: border-box;
     position: relative;
     width: 10%;
@@ -11,22 +39,149 @@ div.all {
     background-color: rgb(230,230,230);
 }
 
+.md {
+    box-sizing: border-box;
+    position: relative;
+    width: 20%;
+    height: 20%;
+    display: inline-block;
+    background-color: rgb(230,230,230);
+}
+
+.lg {
+    box-sizing: border-box;
+    position: relative;
+    width: 33.333%;
+    height: 33.333%;
+    display: inline-block;
+    background-color: rgb(230,230,230);
+}
+
+/* Infobox and nested divs */
+
 .infobox {
     box-sizing: border-box;
     z-index: 5;
     position: absolute;
     float: right;
+    width: 20%;
     top: 10px;
     right: 10px;
     font: 14px/16px Arial, Helvetica, sans-serif;
-    background-color: rgba(255, 255, 255, .9);
-    padding: 10px;
+    background-color: rgba(255, 255, 255, .95);
+    padding: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
 }
 
-#tiny {
-    width: 40px;
+#tinySquares {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
     height: 40px;
-    background-color: blue;
+    border: 2px dashed gray;
+} /* container for selected color divs */
+
+.block {
+    box-sizing: border-box;
+    top: 0px;
+    color: white;
+    text-align: right;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 40px;
+    padding: 13px 10px;
+} /* each selected color div is assigned this class through js */
+
+#btn {
+    padding: 5px 5px 8px 5px;
+    margin-top: 15px;
+    color:white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #859596;
+    border: 0;
+    border-bottom: 2px solid #95a5a6;
+    -webkit-box-shadow: inset 0 -2px #95a5a6;
+    box-shadow: inset 0 -2px #95a5a6;
+} /* copy to clipboard button */
+
+#btn:hover {
+    background: #a1b6b7;
+    border-bottom: 2px solid #95a5a6;
+}
+
+#alert1 {
+    font: 12px Arial, Helvetica, sans-serif;
+    color: red;
+    display: none;
+} /* duplicate color alert */
+
+#alert2 {
+    font: 12px Arial, Helvetica, sans-serif;
+    color: red;
+    display: none;
+} /* too many colors alert */
+
+
+.slider {
+    padding: 20px 0px;
+    color: gray;
+    font: 10px/12px Arial, Helvetica, sans-serif;
+}
+
+.aniDiv {
+    background-color: rgba(255, 255, 255, .95);
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 0px;
+    left: -30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+} /* div to hide infobox */
+
+.aniDiv .glyphicon {
+    position: absolute;
+    top: 17px;
+    left: 9px;
+}
+
+.about {
+    display: none;
+    padding-top: 15px;
+}
+
+.hideAbout {
+    text-align: right;
+}
+
+/* Font icons */
+.fa,
+.fa a:link,
+.fa a:visited,
+.fa a:active {
+    color: #859596;
+    padding-right: 5px;
+}
+
+.fa a:hover {
+    color: #a1b6b7;
+}
+
+.source .fa,
+.source .fa a:link,
+.source .fa a:visited,
+.source .fa a:active,
+.source .fa a:hover {
+    box-sizing: border-box;
+    z-index: 5;
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    padding: 0px;
+}
+
+.glyphicon {
+    cursor: pointer;
 }
