@@ -62,7 +62,7 @@ function userEvents() {
     });
     $('.all').click(function(){
         var bckgrnd = $( this ).css( 'background-color' );
-        var colorBlock = '<div class="block" id="bk_' + this.id + '" draggable="true" style="background-color:' + bckgrnd + '"></div>';
+        var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
         $('#tinySquares').css({'height': '100%', 'border': 'none'});
         // allow user to select 10 colors at a time, and select each color only once
         if(selectedColorBlocks.length < 10) {
