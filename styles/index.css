@@ -129,6 +129,17 @@ a:hover {
     display: none;
 } /* too many colors alert */
 
+#alert3 {
+    font: 12px Arial, Helvetica, sans-serif;
+    color: red;
+    display: none;
+} /* using Safari alert */
+
+#alert3div {
+    font: 12px Arial, Helvetica, sans-serif;
+    display: none;
+    padding-top: 10px;
+}
 
 .slider {
     padding: 20px 0px;
