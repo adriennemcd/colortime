@@ -52,6 +52,12 @@ function print2(message) {
     userEventsSecondary();
 }
 
+// Place selected color RGBs in alert3div div
+function print3(message) {
+    var infoDiv = document.getElementById('alert3div');
+    infoDiv.innerHTML = message;
+}
+
 // User events
 function userEvents() {
     $('.all').mouseover(function(){
@@ -73,6 +79,7 @@ function userEvents() {
                 selectedRGB.push(bckgrnd);
                 selectedColorBlocks.push(colorBlock);
                 $('#btn').attr('data-clipboard-text', selectedRGB);
+                $('#alert3div').css('display', 'none');
                 print2(selectedColorBlocks.join(''));
             }
         } else {
@@ -99,6 +106,7 @@ function userEventsSecondary() {
         selectedColorBlocks.splice( index2, 1 );
         $('#btn').attr('data-clipboard-text', selectedRGB);
         $('#alert2').css('display', 'none');
+        $('#alert3div').css('display', 'none');
         print2(selectedColorBlocks.join(''));
         if(selectedColorBlocks.length == 0 ){
             $('#tinySquares').css('height', '40px');
@@ -162,8 +170,12 @@ clipboard.on('success', function(e) {
 clipboard.on('error', function(e) {
     console.error('Action:', e.action);
     console.error('Trigger:', e.trigger);
-    $('#btn').tooltip({title: 'Press CMD+c to copy'});
-    $('#btn').tooltip('show');
+    $('#alert3').css('display', 'block');
+    $('#alert3').delay( 8000 ).slideUp( 300 );
+    $('#alert3div').css('display', 'block');
+    print3(selectedRGB);
+    //$('#btn').tooltip({title: 'Press CMD+c to copy'});
+    //$('#btn').tooltip('show');
 });
 
 //  Build color divs
