@@ -1,6 +1,5 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/index.css"/>
 <title>colortime!</title>
@@ -16,50 +15,42 @@
 </script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="aniDivMbl" class="aniDivMbl">
-            <div class="left"><h1>colortime!</h1></div>
-            <div class="right"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
-        </div>
-        <div id="infobox" class="infobox">
-            <div id="wrapper2">
-                <h1 class="h1aniDiv">colortime!</h1>
-                <p>Click to select your color story</p>
-                <div id="tinySquares"></div>
+    <section class="infobox">
+        <header class="title icon-plus">
+            <h1>colortime!</h1>
+        </header>
+        <section id="userChoices">
+            <p>Click to select your color story</p>
+            <div id="userColors"></div> <!-- this div is modified w js -->
+            <div class="alerts">
                 <p id="alert1">You already have that color!</p>
                 <p id="alert2">Easy tiger!  10 colors at a time</p>
                 <button id="btn" data-toggle="tooltip" title="" data-placement="bottom" data-clipboard-text="">
                     Copy RGBs to clipboard
                 </button><br />
                 <p id="alert3">For Safari: on desktop, press CMD + C to copy.  On mobile, copy the codes below. </p>
-                <div id="alert3div"></div>
-                <div id="slider" class="slider">
-                    <input type="range" id="size" min="0" value="1" max="2" step="1" onchange="showColors(this.value)">
-                    <div class="labels">
-                        <div class="left">more colors</div>
-                        <div class="right">less colors</div>
-                    </div>
+                <div id="alert3div"></div> <!-- this div is modified w js -->
+            </div> <!-- .alerts -->
+            <div id="slider" class="slider">
+                <input type="range" id="size" min="0" value="1" max="2" step="1" onchange="showColors(this.value)">
+                <div class="labels">
+                    <div class="left">more colors</div>
+                    <div class="right">less colors</div>
                 </div>
-                <div class="hideAbout"><span class="glyphicon glyphicon-chevron-down"></span></div>
-                <div id="about" class="about">
-                    <p>Colortime was made by <a href="http://www.adriennemcd.com" target="_blank">Adrienne McDonnell</a></p>
-                    <a href="https://github.com/adriennemcd" target="_blank"><i class="fa fa-github fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/adriennemcd" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a>
-                    <a href="https://twitter.com/adrienne_mcd" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
-                    <a href="https://instagram.com/ululae/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
-                </div>
-            </div> <!-- wrapper2 -->
-        </div>
-        <div id="aniDiv" class="aniDiv"><span class="glyphicon glyphicon-chevron-right"></span></div>
-    </div>
-    <div class="source">
-        <a href="https://github.com/adriennemcd/colortime" target="_blank"><i class="fa fa-github fa-3x"></i></a>
-    </div>
-    <div id="output"></div>
+            </div>
+            <div class="right"><i class="fa fa-chevron-down"></i></div>
+            <div id="about" class="about">
+                <p>Colortime was made by <a href="http://www.adriennemcd.com" target="_blank">Adrienne McDonnell</a></p>
+                <a href="https://github.com/adriennemcd" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/adriennemcd" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a>
+                <a href="https://twitter.com/adrienne_mcd" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                <a href="https://instagram.com/ululae/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+            </div>
+        </section> <!-- wrapper -->
+    </section>
+    <div id="output"></div> <!-- this div is modified w js -->
 <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

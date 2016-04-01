@@ -39,15 +39,15 @@ for ( var i = 0; i < 9; i += 1) {
 }
 
 // Place color divs in output div
-function print(message) {
+function print(divSize) {
     var outputDiv = document.getElementById('output');
-    outputDiv.innerHTML = message;
+    outputDiv.innerHTML = divSize;
     userEvents();
 }
 
 // Place selected color divs in infobox div
 function print2(message) {
-    var infoDiv = document.getElementById('tinySquares');
+    var infoDiv = document.getElementById('userColors');
     infoDiv.innerHTML = message;
     userEventsSecondary();
 }
@@ -60,17 +60,12 @@ function print3(message) {
 
 // User events
 function userEvents() {
-    $('.all').mouseover(function(){
-        $('#' + this.id).css('border', '3px solid white');
-    });
-    $('.all').mouseout(function(){
-        $('#' + this.id).css('border', 'none');
-    });
+    // each randomly colored div has the class .all
     $('.all').click(function(){
         var bckgrnd = $( this ).css( 'background-color' );
         var colorBlock = '<div class="block" id="bk_' + this.id + '" style="background-color:' + bckgrnd + '"></div>';
-        $('#tinySquares').css({'height': '100%', 'border': 'none'});
-        // allow user to select 10 colors at a time, and select each color only once
+        $('#userColors').css({'height': '100%', 'border': 'none'});
+        // add color to user Color block and RGB color arrays.  Give alerts if >10 colors or if color is already selected
         if(selectedColorBlocks.length < 10) {
             if(selectedColorBlocks.indexOf(colorBlock) != -1) {
                 $('#alert1').css('display', 'block');
@@ -92,7 +87,7 @@ function userEvents() {
 // User events on infobox
 function userEventsSecondary() {
     $('.block').mouseover(function(){
-        $('#' + this.id).attr('class', 'block glyphicon glyphicon-remove');
+        $('#' + this.id).attr('class', 'block fa fa-times');
     });
     $('.block').mouseout(function(){
         $('#' + this.id).attr('class', 'block');
@@ -109,8 +104,8 @@ function userEventsSecondary() {
         $('#alert3div').css('display', 'none');
         print2(selectedColorBlocks.join(''));
         if(selectedColorBlocks.length == 0 ){
-            $('#tinySquares').css('height', '40px');
-            $('#tinySquares').css('border', '2px dashed gray');
+            $('#userColors').css('height', '40px');
+            $('#userColors').css('border', '2px dashed gray');
         }
     });
 }
@@ -127,36 +122,24 @@ function showColors(newVal){
 }
 
 // Hide/show infobox
-$('.glyphicon-chevron-right, .glyphicon-chevron-left').click(function(){
-    $(this).toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
-    if( $('#wrapper').css('right') == '10px') {
-        $('#wrapper').animate({right: '-260px'}, 800, function(){
-                $('#wrapper  > .infobox').css('display', 'none');
-                $('#wrapper').css({'width': '30px', 'right': '0'});
-            });
+$('.title').click(function(){
+    $(this).toggleClass( "minimize" );
+    if( $('#userChoices').css('display') == 'none') {
+        $('#userChoices').slideDown(600);
     } else {
-        $('#wrapper  > .infobox').css('display', 'block');
-        $('#wrapper').css({'right': '-260', 'width': '290px'}).animate({right: '10px'}, 800);
+        $('#userChoices').slideUp(600);
     }
-});
-
-// Hide/show infobox mobile
-$('#aniDivMbl').click(function(){
-    if( $('#infobox > #wrapper2').css('display') == 'none') {
-        $('#infobox > #wrapper2').slideDown(600);
-    } else {
-        $('#infobox > #wrapper2').slideUp(600);
-    }
+    $('.infobox').toggleClass( "minimize" );
 });
 
 // Hide/show about div
-$('.glyphicon-chevron-down, .glyphicon-chevron-up').click(function(){
+$('.fa-chevron-down, .fa-chevron-up').click(function(){
     if( $('#about').css('display') == 'none') {
         $('#about').slideDown(600);
     } else {
         $('#about').slideUp(600);
     }
-    $(this).toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    $(this).toggleClass('fa-chevron-down fa-chevron-up');
 });
 
 // Initiate clipboard.js and events
@@ -174,8 +157,6 @@ clipboard.on('error', function(e) {
     $('#alert3').delay( 8000 ).slideUp( 300 );
     $('#alert3div').css('display', 'block');
     print3(selectedRGB);
-    //$('#btn').tooltip({title: 'Press CMD+c to copy'});
-    //$('#btn').tooltip('show');
 });
 
 //  Build color divs

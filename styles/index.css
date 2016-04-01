@@ -1,27 +1,31 @@
-/* General */
+/* BASE STYLES
+==========================================
+*/
 
 * {
     box-sizing: border-box;
 }
 
-body {
+body, div, h1 {
     margin: 0;
 }
 
 h1 {
-    color: rgb(35, 194, 108);
+    padding: 2rem 0;
+    font-size: 2.3rem;
+    color: #23c26c;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 a:link,
 a:visited,
 a:active {
-   color: rgb(35, 194, 108);
+   color: #23c26c;
 }
 
 a:hover {
     text-decoration: none;
-    color: rgb(24, 148, 100);
+    color: #189464;
 }
 
 .left {
@@ -58,31 +62,37 @@ a:hover {
     background-color: rgb(230,230,230);
 }
 
-/* Infobox and related divs */
+/* LAYOUT
+==========================================
+*/
 
-#wrapper {
-    z-index: 5;
-    position: absolute;
-}
-
-.aniDiv {
-    z-index: 6;
-} /* div to hide infobox */
-
-.aniDiv .glyphicon {
-    position: absolute;
-    top: 17px;
-    left: 9px;
+.all:hover {
+    border: 3px solid #FFF;
 }
 
 .infobox {
     z-index: 5;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 0px 20px 20px 20px;
     font: 14px/16px Arial, Helvetica, sans-serif;
     background-color: rgba(255, 255, 255, .95);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transition: all 300ms ease-in-out;
 }
 
-#tinySquares {
+.title {
+    width: 100%;
+}
+
+.minimize {
+    transition: all 300ms ease-in-out;
+    padding-bottom: 0;
+}
+
+#userColors {
     margin: 0 auto;
     width: 100%;
     height: 40px;
@@ -108,7 +118,6 @@ a:hover {
     background: #859596;
     border: 0;
     border-bottom: 2px solid #95a5a6;
-    -webkit-box-shadow: inset 0 -2px #95a5a6;
     box-shadow: inset 0 -2px #95a5a6;
 } /* copy to clipboard button */
 
@@ -139,7 +148,7 @@ a:hover {
     font: 12px Arial, Helvetica, sans-serif;
     display: none;
     padding-top: 10px;
-}
+} /* div to hold RGB codes for Safari error */
 
 .slider {
     padding: 20px 0px;
@@ -147,157 +156,69 @@ a:hover {
     font: 10px/12px Arial, Helvetica, sans-serif;
 }
 
+.slider input {
+    width: 100%;
+}
+
 .about {
+    clear: both;
     display: none;
     padding-top: 15px;
 }
 
-.hideAbout {
-    text-align: right;
-}
+/* FONT ICON STYLING
+==========================================
+*/
 
-/* Font icons */
 .fa,
-.fa a:link,
-.fa a:visited,
-.fa a:active {
+a:link .fa,
+a:visited .fa,
+a:active .fa {
     color: #859596;
     padding-right: 5px;
-}
-
-.fa a:hover {
-    color: #a1b6b7;
-}
-
-.source .fa,
-.source .fa a:link,
-.source .fa a:visited,
-.source .fa a:active,
-.source .fa a:hover {
-    z-index: 5;
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    padding: 0px;
-}
-
-.glyphicon {
     cursor: pointer;
 }
 
-.glyphicon-menu-hamburger {
-    font-size: 1.3em;
+a:hover .fa,
+.fa:hover {
+    color: #a1b6b7;
 }
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+.fa-times,
+.fa-times:hover {
+    padding-right: 10px;
+    color: #FFF;
+}
 
+/* icon for minimizing and expanding infobox */
+.icon-plus:after {
+    position: absolute;
+    top: 32px;
+    right: 20px;
+    font-family: FontAwesome;
+    content: "\f067";
+    font-size: 1.5rem;
+    color: #178148;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transform: rotate(45deg);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+.icon-plus.minimize:after {
+    transition: all 300ms ease-in-out;
+    transform: rotate(0deg);
+    cursor: pointer;
+}
 
-/* Phones to Tablets */
+/* MEDIA QUERIES
+==========================================
+*/
 
-@media only screen and (min-width: 10px) {
-    #wrapper {
-        right: 0px;
-        top: 0px;
-        width: 100%;
-    }
-
+@media only screen and (min-width: 650px) {
     .infobox {
-        z-index: 5;
-        width: 100%;
-        padding: 0px 20px 20px 20px;
-    }
-
-    .aniDivMbl {
-        float: left;
-        width: 100%;
-        height: 90px;
-        padding: 0px 20px;
-        background-color: #fff;
-
-    }
-
-    .aniDivMbl .right {
-        padding-top: 35px;
-    }
-
-    .aniDiv,
-    .h1aniDiv {
-        display: none;
-    }
-}
-
-/* Tablets to Desktop */
-
-@media only screen and (min-width: 769px) {
-    #wrapper {
-        width: 290px;
         top: 10px;
         right: 10px;
-    }
-
-    .infobox {
-        z-index: 5;
-        float: right;
         width: 260px;
-        padding: 20px;
-    }
-
-    .aniDiv {
-        z-index: 6;
-        background-color: rgba(255, 255, 255, .95);
-        float: left;
-        width: 30px;
-        height: 50px;
-        top: 10px;
-        right: 270px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        display: block;
-    }
-
-    .h1aniDiv {
-        display: block;
-    }
-
-    .aniDivMbl {
-        display: none;
     }
 }
 
-@media only screen and (min-width: 1024px) {
-    #wrapper {
-        width: 290px;
-        top: 10px;
-        right: 10px;
-    }
-
-    .infobox {
-        z-index: 5;
-        float: right;
-        width: 260px;
-        padding: 20px;
-    }
-
-    .aniDiv {
-        z-index: 6;
-        background-color: rgba(255, 255, 255, .95);
-        float: left;
-        width: 30px;
-        height: 50px;
-        top: 10px;
-        right: 270px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        display: block;
-    }
-
-    .h1aniDiv {
-        display: block;
-    }
-
-    .aniDivMbl {
-        display: none;
-    }
-}
